@@ -1,0 +1,44 @@
+.book-search-wrapper {
+	margin-bottom: 20px;
+}
+.book-menu-wrapper {
+	height: 100%;
+	min-height: 400px;
+	padding-right: 10px;
+	.el-menu-item {
+		height: 40px;
+		line-height: 40px;
+	}
+	.el-menu-item.is-active {
+		color: #000000 !important;
+		background-color: #b7d8f48a !important;
+	}
+}
+.search-wrapper {
+	margin-bottom: 10px;
+	:deep(.el-card__body) {
+		padding-bottom: 2px;
+	}
+}
+.toolbar-wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+.table-wrapper {
+	margin-bottom: 20px;
+}
+.pager-wrapper {
+	display: flex;
+	justify-content: flex-end;
+}
+.el-link {
+	margin-right: 8px;
+}
+.el-dropdown-link {
+	display: flex;
+	align-items: center;
+	color: var(--el-color-primary);
+	vertical-align: middle;
+	cursor: pointer;
+}
