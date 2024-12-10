@@ -10,7 +10,7 @@ import router from "@/routers"
 
 const config = {
 	// 默认地址请求地址，可在 .env.*** 文件中修改
-	baseURL: import.meta.env.VITE_API_URL as string,
+	baseURL: import.meta.env.VITE_TEST_API_URL as string,
 	// 设置超时时间（30s）
 	timeout: ResultEnum.TIMEOUT as number,
 	// 跨域时候允许携带凭证
@@ -102,6 +102,6 @@ class RequestHttp {
 
 export const http = new RequestHttp(config)
 export const request = http.service.request
-export const AppBaseURL = import.meta.env.VITE_APP_API_URL as string
+export const AppBaseURL = import.meta.env.VITE_API_URL as string
 export const SsoBaseURL = import.meta.env.VITE_SSO_API_URL as string
 export const UumsBaseURL = import.meta.env.VITE_UUMS_API_URL as string
