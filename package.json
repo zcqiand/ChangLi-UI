@@ -34,6 +34,7 @@
 		"mitt": "^3.0.0",
 		"moment": "^2.29.4",
 		"nprogress": "^0.2.0",
+		"oidc-client": "^1.11.5",
 		"pinia": "^2.0.28",
 		"pinia-plugin-persistedstate": "^3.0.1",
 		"print-js": "^1.6.0",
