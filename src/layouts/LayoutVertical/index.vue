@@ -5,7 +5,7 @@
 			<div class="menu" :style="{ width: isCollapse ? '65px' : '210px' }">
 				<div class="logo flx-center">
 					<img src="@/assets/images/logo.png" alt="logo" />
-					<span v-show="!isCollapse">ChangLi</span>
+					<span v-show="!isCollapse">南荣ERP系统</span>
 				</div>
 				<el-scrollbar>
 					<el-menu

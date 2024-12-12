@@ -1,5 +1,4 @@
 import { defineConfig, loadEnv, ConfigEnv, UserConfig } from "vite"
-import { createHtmlPlugin } from "vite-plugin-html"
 import vue from "@vitejs/plugin-vue"
 import { resolve } from "path"
 import { wrapperEnv } from "./src/utils/getEnv"
@@ -9,10 +8,6 @@ import viteCompression from "vite-plugin-compression"
 import vueSetupExtend from "vite-plugin-vue-setup-extend-plus"
 import eslintPlugin from "vite-plugin-eslint"
 import vueJsx from "@vitejs/plugin-vue-jsx"
-import importToCDN from "vite-plugin-cdn-import"
-// import AutoImport from "unplugin-auto-import/vite";
-// import Components from "unplugin-vue-components/vite";
-// import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 // @see: https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -54,13 +49,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		},
 		plugins: [
 			vue(),
-			createHtmlPlugin({
-				inject: {
-					data: {
-						title: viteEnv.VITE_GLOB_APP_TITLE
-					}
-				}
-			}),
 			// * 使用 svg 图标
 			createSvgIconsPlugin({
 				iconDirs: [resolve(process.cwd(), "src/assets/icons")],
@@ -82,31 +70,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 					threshold: 10240,
 					algorithm: "gzip",
 					ext: ".gz"
-				}),
-			// * cdn 引入（vue按需引入会导致依赖vue的插件出现问题(列如:pinia/vuex)）
-			importToCDN({
-				modules: [
-					// {
-					// 	name: "vue",
-					// 	var: "Vue",
-					// 	path: "https://unpkg.com/vue@next"
-					// },
-					// 使用cdn引入element-plus时,开发环境还是需要在main.js中引入element-plus,可以不用引入css
-					// {
-					// 	name: "element-plus",
-					// 	var: "ElementPlus",
-					// 	path: "https://unpkg.com/element-plus",
-					// 	css: "https://unpkg.com/element-plus/dist/index.css"
-					// }
-				]
-			})
-			// * demand import element
-			// AutoImport({
-			// 	resolvers: [ElementPlusResolver()]
-			// }),
-			// Components({
-			// 	resolvers: [ElementPlusResolver()]
-			// }),
+				})
 		],
 		// * 打包去除 console.log && debugger
 		esbuild: {
@@ -115,14 +79,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		build: {
 			outDir: "dist",
 			minify: "esbuild",
-			// esbuild 打包更快，但是不能去除 console.log，terser打包慢，但能去除 console.log
-			// minify: "terser",
-			// terserOptions: {
-			// 	compress: {
-			// 		drop_console: viteEnv.VITE_DROP_CONSOLE,
-			// 		drop_debugger: true
-			// 	}
-			// },
 			chunkSizeWarningLimit: 1500,
 			rollupOptions: {
 				output: {

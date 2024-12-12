@@ -27,14 +27,15 @@
 import { ref } from "vue"
 import { GlobalStore } from "@/stores"
 import { LOGIN_URL } from "@/config/config"
-import { logoutApi } from "@/api/modules/login"
 import { useRouter } from "vue-router"
 import { ElMessageBox, ElMessage } from "element-plus"
 import InfoDialog from "./InfoDialog.vue"
 import PasswordDialog from "./PasswordDialog.vue"
+import AuthService from "@/services/auth.service"
 
 const router = useRouter()
 const globalStore = GlobalStore()
+const auth = new AuthService()
 
 // 退出登录
 const logout = () => {
@@ -43,12 +44,12 @@ const logout = () => {
 		cancelButtonText: "取消",
 		type: "warning"
 	}).then(async () => {
-		// 1.调用退出登录接口
-		await logoutApi()
-		// 2.清除 Token
+		// 1.清除 Token
 		globalStore.setToken("")
+		// 2.调用退出登录接口
+		await auth.logout()
 		// 3.重定向到登陆页
-		router.replace(LOGIN_URL)
+		//router.replace(LOGIN_URL)
 		ElMessage.success("退出登录成功！")
 	})
 }

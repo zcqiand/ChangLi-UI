@@ -4,7 +4,7 @@
 		<el-header>
 			<div class="logo flx-center">
 				<img src="@/assets/images/logo.png" alt="logo" />
-				<span>ChangLi</span>
+				<span>南荣ERP系统</span>
 			</div>
 			<el-menu
 				mode="horizontal"

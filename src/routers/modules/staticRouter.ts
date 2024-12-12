@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from "vue-router"
-import { HOME_URL, LOGIN_URL, REGISTER_URL } from "@/config/config"
+import { HOME_URL, LOGIN_URL } from "@/config/config"
 
 /**
  * staticRouter(静态路由)
@@ -18,18 +18,9 @@ export const staticRouter: RouteRecordRaw[] = [
 		}
 	},
 	{
-		path: REGISTER_URL,
-		name: "register",
-		component: () => import("@/views/login/register.vue"),
-		meta: {
-			title: "注册新用户"
-		}
-	},
-	{
 		path: "/layout",
 		name: "layout",
 		component: () => import("@/layouts/index.vue"),
-		// component: () => import("@/layouts/indexAsync.vue"),
 		redirect: HOME_URL,
 		children: []
 	}
