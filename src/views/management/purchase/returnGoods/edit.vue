@@ -133,13 +133,21 @@ const resetForm = () => {
 //保存
 const dialogVisible = ref<boolean>(false)
 const formRef = ref<FormInstance | null>(null)
+type formDataItem = {
+	name: string,
+	brandModel: string,
+	quantity: string,
+	unitPrice: string,
+	totalPrice: string,
+	editable: boolean
+}
 const formData = reactive({
 	returnGoodsType: 0,
 	returnGoodsNumber: "",
 	returnGoodsDate: "",
 	returnGoodsTitle: "",
 	remark: "",
-	items: []
+	items: formDataItem[]
 })
 const formRules: FormRules = reactive({
 	returnGoodsType: [{ required: true, trigger: "blur", message: "请输入退货类型" }],

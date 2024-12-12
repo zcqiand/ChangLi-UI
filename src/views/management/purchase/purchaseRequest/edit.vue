@@ -132,12 +132,20 @@ const resetForm = () => {
 //保存
 const dialogVisible = ref<boolean>(false)
 const formRef = ref<FormInstance | null>(null)
+type formDataItem = {
+	name: string,
+	brandModel: string,
+	quantity: string,
+	unitPrice: string,
+	totalPrice: string,
+	editable: boolean
+};
 const formData = reactive({
 	requestNumber: "",
 	requestDate: "",
 	purchaseTitle: "",
 	remark: "",
-	items: []
+	items: formDataItem[]
 })
 const formRules: FormRules = reactive({
 	requestDate: [{ required: true, trigger: "blur", message: "请输入需求日期" }],

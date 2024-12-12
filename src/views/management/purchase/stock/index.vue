@@ -124,7 +124,7 @@ const selectionChange = (items: any[]) => {
 //获取清单
 const searchFormRef = ref<FormInstance | null>(null)
 const searchData = reactive({
-	name: ""
+	stockTitle: ""
 })
 const tableData = ref<any[]>([])
 const queryTableData = () => {
@@ -132,7 +132,7 @@ const queryTableData = () => {
 	queryApi({
 		pageIndex: paginationData.currentPage,
 		pageSize: paginationData.pageSize,
-		name: searchData.name || undefined
+		stockTitle: searchData.stockTitle || undefined
 	})
 		.then((res: any) => {
 			paginationData.total = res.data.total
