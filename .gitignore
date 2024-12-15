@@ -9,14 +9,11 @@ lerna-debug.log*
 
 node_modules
 dist
-html
 dist-ssr
-*.local
 stats.html
+*.local
 
-
-# Editor directories and files# Visual Studio 2015/2017 cache/options directory
-.vs/
+# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
@@ -27,4 +24,4 @@ stats.html
 *.njsproj
 *.sln
 *.sw?
-/.vs/*
+/.vs
