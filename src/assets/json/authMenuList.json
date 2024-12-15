@@ -1,0 +1,106 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "path": "/home/index",
+      "name": "home",
+      "component": "/home/index",
+      "meta": {
+        "icon": "HomeFilled",
+        "title": "首页",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": true,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/management/erp",
+      "name": "management-erp",
+      "redirect": "/management/erp/index",
+      "meta": {
+        "icon": "Management",
+        "title": "采购管理",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      },
+      "children": [
+        {
+          "path": "/management/erp/supplier",
+          "name": "management-erp-supplier",
+          "component": "/management/erp/supplier/index",
+          "meta": {
+            "icon": "Document",
+            "title": "供应商管理",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/management/erp/purchaseRequest",
+          "name": "management-erp-purchaseRequest",
+          "component": "/management/erp/purchaseRequest/index",
+          "meta": {
+            "icon": "Document",
+            "title": "采购需求",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/management/erp/contract",
+          "name": "management-erp-contract",
+          "component": "/management/erp/contract/index",
+          "meta": {
+            "icon": "Document",
+            "title": "采购合同",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/management/erp/stock",
+          "name": "management-erp-stock",
+          "component": "/management/erp/stock/index",
+          "meta": {
+            "icon": "Document",
+            "title": "采购入库",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/management/erp/returnGoods",
+          "name": "management-erp-returnGoods",
+          "component": "/management/erp/returnGoods/index",
+          "meta": {
+            "icon": "Document",
+            "title": "采购退货",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
+    }
+  ],
+  "msg": "成功"
+}
