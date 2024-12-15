@@ -1,8 +1,10 @@
-# ChangLi:基于 ASP\.NET Core+Vue 的 ERP 系统
+# ChangLi:基于 ASP\.NET Core+Vue 的 ERP 系统 - 前端部分
 
 ## 系统介绍
 
 使用 ASP\.NET Core + Vue 框架来实现一个功能齐全的 ERP 系统，旨在为企业提供一个全面集成的解决方案，以优化资源、流程和信息的管理。
+
+该项目为前后端分离项目的前端部分，后端项目地址：[传送门](https://github.com/zcqiand/Changli-API)。
 
 ![](https://raw.githubusercontent.com/zcqiand/nanrong/gh-pages/assets/img/202401/QQ20240115220720.png)
 
@@ -72,4 +74,3 @@
 如果觉得我们的内容对于你有所帮助，请作者喝杯咖啡吧！ 后续会继续完善更新！一起加油！
 
 ![](https://home.nanrong.store/assets/zhifu.png)
-
