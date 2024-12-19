@@ -149,7 +149,7 @@ const queryTableData = () => {
 const { paginationData, handleCurrentChange, handleSizeChange } = usePagination()
 watch([() => paginationData.currentPage, () => paginationData.pageSize], queryTableData, { immediate: true })
 //添加
-const editRef = ref<FormInstance | null>(null)
+const editRef = ref<EditFormInstance | null>(null)
 const dialogVisible = ref<boolean>(false)
 const handleAdd = () => {
   dialogVisible.value = true
