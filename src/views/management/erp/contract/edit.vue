@@ -201,8 +201,6 @@ const handleCreate = () => {
           emit("success")
         })
       }
-    } else {
-      return false
     }
   })
 }
@@ -236,8 +234,6 @@ const handleSaveAs = () => {
         dialogVisible.value = false
         emit("success")
       })
-    } else {
-      return false
     }
   })
 }

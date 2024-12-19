@@ -72,3 +72,7 @@ declare const __APP_INFO__: {
   }
   lastBuildTime: string
 }
+
+interface EditFormInstance extends FormInstance {
+  handleUpdate(id?: string | undefined): void
+}
