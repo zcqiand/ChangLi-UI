@@ -21,7 +21,6 @@ const keepAliveStore = useKeepAliveStore()
 const auth = new AuthService()
 
 onMounted(() => {
-  // try {
   auth.getUser().then(async (user: any) => {
     if (user && user !== null && !user.expired) {
       userStore.setToken(user.access_token)
@@ -44,8 +43,6 @@ onMounted(() => {
       await auth.login()
     }
   })
-  // } finally {
-  // }
 })
 </script>
 <style scoped lang="scss"></style>

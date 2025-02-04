@@ -12,9 +12,25 @@ export const staticRouter: RouteRecordRaw[] = [
   {
     path: LOGIN_URL,
     name: "login",
-    component: () => import("@/views/login/index.vue"),
+    component: () => import("@/views/login/login.vue"),
     meta: {
       title: "登录"
+    }
+  },
+  {
+    path: "/callback",
+    name: "callback",
+    component: () => import("@/views/login/callback.vue"),
+    meta: {
+      title: "callback"
+    }
+  },
+  {
+    path: "/silent-callback",
+    name: "silent-callback",
+    component: () => import("@/views/login/silent-callback.vue"),
+    meta: {
+      title: "silent-callback"
     }
   },
   {

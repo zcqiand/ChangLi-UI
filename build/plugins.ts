@@ -31,12 +31,12 @@ export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOptio
     // 创建打包压缩配置
     createCompression(viteEnv),
     // 注入变量到 html 文件
-    //createHtmlPlugin({
-    //  minify: true,
-    //  inject: {
-    //    data: { title: VITE_GLOB_APP_TITLE }
-    //  }
-    //}),
+    createHtmlPlugin({
+      minify: true,
+      inject: {
+        data: { title: VITE_GLOB_APP_TITLE }
+      }
+    }),
     // 使用 svg 图标
     createSvgIconsPlugin({
       iconDirs: [resolve(process.cwd(), "src/assets/icons")],
