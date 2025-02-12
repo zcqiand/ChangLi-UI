@@ -7,9 +7,9 @@ export default class AuthService {
     const settings: any = {
       authority: `${import.meta.env.VITE_IDENTITYSERVER_APP_URL}`,
       client_id: `${import.meta.env.VITE_CLIENT_ID}`,
-      redirect_uri: `${import.meta.env.VITE_APP_URL}/callback`,
+      redirect_uri: `${import.meta.env.VITE_APP_URL}/#/callback`,
       automaticSilentRenew: true,
-      silent_redirect_uri: `${import.meta.env.VITE_APP_URL}/silent-callback`,
+      silent_redirect_uri: `${import.meta.env.VITE_APP_URL}/#/silent-callback`,
       response_type: `${import.meta.env.VITE_GRANT_TYPE}`,
       scope: "openid offline_access",
       userStore: new WebStorageStateStore({ store: window.localStorage })
